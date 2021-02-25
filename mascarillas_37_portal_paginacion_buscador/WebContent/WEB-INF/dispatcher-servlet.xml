@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<!-- Incluyo el hibernate-context -->
+	<import resource="hibernate-context.xml"/>
+		
+	
+	<!-- vamos a decirle a spring mvc que no intercepte con las plantillas
+	de moustache ni de javascript: -->
+	<mvc:resources mapping="/js/**" location="/js/"/>
+	<mvc:resources mapping="/imagenes/**" location="/imagenes/"/>
+	<mvc:resources mapping="/fotos/**" location="/fotos/"/>
+	<mvc:resources mapping="/css/**" location="/css/"/>
+	<mvc:resources mapping="/fuentes/**" location="/fuentes/"/>
+	<mvc:resources mapping="/jsExterno/**" location="/jsExterno/"/>
+	<mvc:resources mapping="/plantillas-mustache/**" location="/plantillas-mustache/"/>
+	<mvc:resources mapping="/subidas/**" location="/subidas/"/>
+	
+	<!-- una vez incluido el namespace mvc -->
+	<!-- lo siguiente me permite usar ciertas funcionalidades como 
+	la parte de validacion por anotaciones -->
+	<mvc:annotation-driven/>
+
+	<!-- con la siguiente linea puedo usar ciertas anotaciones de spring -->
+	<context:annotation-config/>
+
+	
+	<!-- ahora este proyecto, es un proyecto spring MVC -->
+	<!-- una regla de spring MVC es que debemos tener 
+	una bean por cada controlador -->
+	
+<!-- 	<bean id="controladorInicio"  -->
+<!-- 		class="controladores.ControladorInicio"/> -->
+	
+	<!-- en vez de tener que ir creando bean a bean
+	por cada clase en el paquete controladores
+	voy a decirle a spring que me cree una bean 
+	por cada clase que haya en ese paquete que este 
+	con @Controller -->
+	<context:component-scan base-package="controladores"/>
+	<context:component-scan base-package="controladores.admin"/>
+	<context:component-scan base-package="serviciosWEB"/>
+	<context:component-scan base-package="serviciosImpl"/>
+	
+	<!-- la siguiente bean agrega un prefijo y sufijo al return de cualquier
+	metodo de un controller -->
+	<bean id="viewResolver" 
+	class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="/WEB-INF/jsps/" />
+			<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<bean id="multipartResolver" 
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+		
+	<!-- interceptores -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/servicioWebMascarillas/*"/>
+			<bean class="interceptores.InterceptorIdentificacionUsuario"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+</beans>
+
+
+
+

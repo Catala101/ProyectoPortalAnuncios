@@ -1,0 +1,40 @@
+
+<!--  Todo lo de después se va ha repetir como array-->
+<div class="album py-5 bg-light">
+
+    <div class="container">
+		<h3 style="text-align: center; font-size:40px; color: orange; font-family: Roustel; margin-bottom: 40px;">Listado de las mascarillas publicadas:</h3><br/>
+      <div class="row">
+{{#.}}
+			<!--  <img src="subidas/{{id}}.jpg" style="height:90px; weight:90px; border-radius: 15px 15px 15px 15px;" />-->
+		<div class="col-md-4" >
+          <div class="card mb-4 shadow-sm" style="border: 2px solid orange">
+            <img src="subidas/{{id}}.jpg" width="100%" height="225" class="card-img-top" alt="Imagen de Mascarilla">
+            <div class="card-body">
+            <p class="card-title"><b>Mascarilla: {{nombre}}</b></p>
+            <p class="card-text">{{descripcion}}</p>
+              <ul class="list-group list-group-flush">
+              	<li class="list-group-item"><b>Id:</b> {{id}}</li>
+	    		<li class="list-group-item"><b>Fabricante:</b> {{fabricante}}</li>
+	    		<li class="list-group-item"><b>Precio:</b> {{precio}}&euro;</li>
+	  		  </ul>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" idp="{{id}}" class="enlaceBorrar" style="padding-left: 3px; background-color: orange; border-radius: 5px 0px 0px 5px; color:white; border: 2px solid black">Eliminar</button>
+                  <button type="button" idp="{{id}}" class="enlaceEditar" style="padding-left: 3px; background-color: black; border-radius: 0px 5px 5px 0px; color:white; border: 2px solid black">Editar</button>
+                </div>
+                <medium class="text-muted">Stock: {{stock}}</medium>
+              </div>
+            </div>
+          </div>
+        </div>
+		<!--<a href="#" style="text-decoration:none; color:white; font-size:20px" idp="{{id}}" class="enlaceBorrar">Eliminar anuncio</a>-->
+		<!--<a href="#" style="text-decoration:none; color:white; font-size:20px" idp="{{id}}" class="enlaceEditar">Editar anuncio</a>-->
+	
+	
+
+        
+{{/.}}
+		</div>
+	</div>
+</div>

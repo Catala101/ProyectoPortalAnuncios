@@ -1,0 +1,277 @@
+@charset "UTF-8";
+
+ /*Añadido por Alberto Catalá*/
+	.titulo{
+		font-family: SheepingDogs;
+		font-size: 50px;
+	}
+	.site-header2{
+		display: none;
+	}
+	.card{
+	  	transition: 1s
+	}
+	.card:hover{
+	    transform:scale(1.1);
+	}
+	.py-2{
+		font-family: Roustel;
+		font-size: 25px;
+	}
+	.submenu3{
+		background-color: black; 
+		border-radius: 15px 15px 15px 15px; 
+		width:80%;
+		display: inline-block;
+		padding: 10px;
+		margin-top: 20px;
+	}
+	.enlace{
+		width:50%;
+		float: left;
+		font-family: SheepingDogs;
+	}
+	.enlace:hover{
+		-webkit-transform:scale(1.1);
+		transform:scale(1.1);
+		transition: 0.5s;
+	}
+	.enlace a{
+		text-decoration: none; 
+		color: orange;
+	}
+	.anuncios{
+		text-align:center;
+		font-family: Roustel;
+		color: orange;
+		font-size: 50px;
+		margin-left: 290px;
+	}
+	/*Formulario validación*/
+	#errorN{
+		display: none;
+	}
+	#errorM{
+		display: none;
+	}
+	#errorP{
+		display: none;
+	}
+	#errorF{
+		display: none;
+	}
+	#errorD{
+		display: none;
+	}
+	#errorS{
+		display: none;
+	}
+	/*Buscador*/
+.box{
+  float: right;
+}
+.container-4{
+  overflow: hidden;
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-right: 30px;
+}
+.container-4 input#search{
+  width: 300px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 12pt;
+  float: left;
+  color: #fff;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.container-4 input#search::-webkit-input-placeholder {
+   color: #65737e;
+}
+ 
+.container-4 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;  
+}
+ 
+.container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;  
+}
+ 
+.container-4 input#search:-ms-input-placeholder {  
+   color: #65737e;  
+}
+
+.container-4 button.icon{
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+ 
+  border: none;
+  background: #232833;
+  height: 50px;
+  width: 50px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+ 
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+  .container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+    outline: none;
+    opacity: 1;
+    margin-left: -50px;
+  }
+ 
+  .container-4:hover button.icon:hover{
+    background: orange;
+  }
+footer{
+  width: 100%;
+  background: #262626;
+  color: white;
+  padding-top: 40px;
+}
+.contenedor-footer-all{
+  width: 100%;
+  max-width: 2000px;
+  margin: auto;
+}
+.contenedor-body{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.colum1{
+  max-width: 400px;
+  padding-left: 20px;
+}
+.colum1 h1{
+  font-size: 22px;
+}
+.colum1 p{
+  font-size: 14px;
+  color: #C7C7C7;
+  margin-top: 20px;
+}
+.colum2{
+  max-width: 400px;
+  padding-left: 20px;
+}
+.colum2 h1{
+  font-size: 22px;
+}
+
+.row1{
+  margin-top: 20px;
+  display: flex;
+}
+
+.row1 img{
+  width: 36px;
+  height: 36px;
+}
+
+.row1 label{
+  margin-top: 10px;
+  margin-left: 20px;
+  color: #C7C7C7;
+}
+.colum3{
+  max-width: 400px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.colum3 h1{
+  font-size: 22px;
+}
+.row2{
+  margin-top: 20px;
+}
+.row2 img{
+  width: 36px;
+  height: 36px;
+}
+.row2 label{
+  margin-top: 10px;
+  margin-left: 20px;
+  max-width: 140px;
+}
+.contenedor-footer{
+  width: 100%;
+  background-color: #101010;
+}
+.contenedor-footer a:hover{
+  color: orange;
+  text-decoration: none;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  padding: 20px;
+  margin: auto;
+}
+.info{
+	font-family: Roustel;
+	color: orange;
+}
+.copyright{
+  color: #C7C7C7;
+}
+.copyright a{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.informacion a{
+  text-decoration: none;
+  color:#C7C7C7;
+}
+
+ @media (max-width: 768px) {
+ 	.site-header2{
+		display: flex;
+ 		background-color: black;
+ 	}
+ 	.titulo{
+		font-family: SheepingDogs;
+		font-size: 40px;
+	}
+	.card:hover{
+	    transform:scaleX(0.9) scaleY(0.9);
+	}
+	.enlace a{
+		text-decoration: none; 
+		color: orange;
+		font-size: 23px;
+	}
+	.anuncios{
+		text-align:center;
+		font-family: Roustel;
+		color: orange;
+		font-size: 50px;
+		margin-left: 30px;
+	}
+ }
+ @media screen and (max-width: 1100px){
+  .contenedor-body{
+    flex-wrap: wrap;
+  }
+  .colum1{
+    max-width: 100%;
+  }
+}

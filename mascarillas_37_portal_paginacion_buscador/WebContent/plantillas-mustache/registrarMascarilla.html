@@ -1,0 +1,87 @@
+
+	<h3 style="margin-left:40px;">Inserta los datos de la Mascarilla a vender:</h3><br>
+	
+	<!--<form>
+		Al ser javascript los identificamos por id 
+		
+			nombre: <input type="text" name="nombre" id="nombre"/> <br/>
+			descripcion: <input type="text" name="descripcion" id="descripcion"/> <br/>
+			fabricante: <input type="text" name="fabricante" id="fabricante"/> <br/>
+			stock: <input type="text" name="stock" id="stock"/> <br/>
+			precio: <input type="text" name="precio" id="precio"/> <br/>
+			portada: <input type="file" name="portada" id="portada"/> <br/>
+			<input type="submit" name="REGISTRAR ANUNCIO"/>
+		
+	</form>-->
+<form style="margin-bottom:80px; margin-left: 40px; margin-right: 40px; margin-top: 20px; padding:20px; border: 2px solid orange; border-radius: 15px 15px 15px 15px; " onsubmit="return validar();">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Nombre</label>
+      <input type="text" class="form-control" name="nombre" id="nombre">
+      <p id="errorN" class="formulario__input-error">* El nombre del producto debe contener entre 3 y 16 caracteres numéricos o letras, puede contener guiones</p>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Fabricante</label>
+      <input type="text" class="form-control" name="fabricante" id="fabricante">
+      <p id="errorF" class="formulario__input-error">* El fabricante debe tener entre 2 y 20 caracteres</p>
+    </div>
+  </div>
+  <div class="form-row">
+  	<div class="form-group col-md-12">
+  		<label for="inputEmail4">Descripci&oacuten</label>
+  		<div class="input-group">
+  			<div class="input-group-prepend">
+  	  			<span class="input-group-text">Descripci&oacuten</span>
+  			</div>
+ 	 		<textarea class="form-control" aria-label="With textarea" name="descripcion" id="descripcion"></textarea>
+		</div>
+		<p id="errorD" class="formulario__input-error">* La descripción no puede estar vacía</p>
+	</div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Stock</label>
+      <input type="text" class="form-control" name="stock" id="stock">
+      <p id="errorS" class="formulario__input-error">* El Stock solo permite número del 0 al 9 con límite de 100</p>
+    </div>
+    <div class="form-group col-md-6">
+    <label for="inputCity">Precio</label>
+    	<div class="input-group mb-3">
+  			<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="precio" id="precio">
+  			<div class="input-group-append">
+    			<span class="input-group-text">&euro;</span>
+  			</div>
+		</div>
+		<p id="errorP" class="formulario__input-error">* El precio debe tener numeros del 0 al 9 separado por comas</p>
+	</div>
+  </div>
+  <div class="form-row"> 
+    <div class="form-group col-md-6">
+    <label for="inputState">Imagen</label>
+    	<div class="input-group mb-3">
+  			<div class="custom-file">
+    			<input type="file" class="custom-file-input" name="portada" id="portada">
+    			<label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Elegir Imagen</label>
+  			</div>
+		</div>
+    </div>
+  </div>
+  <div class="form-row"> 
+    <div class="form-group col-md-6">
+    <label for="inputState">Selecciona una Categor&iacutea</label>
+    	<div class="input-group mb-3">
+  			<div class="custom-file">
+    			<select class="custom-select" name="inputGroupSelect04" id="inputGroupSelect04">
+    				<option selected>Elegir Categor&iacutea...</option>
+    				{{#.}}
+    				<option value="{{id}}">{{nombre}}</option>
+    				{{/.}}
+  				</select>
+  			</div>
+		</div>
+    </div>
+  </div>
+  <div class="form-group">
+  </div>
+  <input type="submit" class="btn btn-warning" style="color:white;" value="REGISTRAR"></input>
+</form>
